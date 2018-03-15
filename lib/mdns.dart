@@ -115,10 +115,12 @@ class Mdns {
     Map args = new Map();
     args["serviceType"] = serviceType;
     _channel.invokeMethod("startDiscovery", args);
+    return this;
   }
 
   stopDiscovery(){
     _channel.invokeMethod("stopDiscovery", new Map());
+    return this;
   }
 
   addService(String serviceName) {
